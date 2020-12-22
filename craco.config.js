@@ -4,11 +4,14 @@ module.exports = {
   plugins: [
     {
       plugin: CracoAntDesignPlugin,
-      options: {
-        customizeTheme: {
-
-        },
-      },
     },
   ],
+  style: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ],
+    },
+  },
 };

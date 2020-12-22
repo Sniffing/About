@@ -1,18 +1,24 @@
 import React from 'react';
 import './App.less';
 import { DanceSection } from './dance-section/dance-section.component';
-import { MeLinks } from './me-section/me-links/me-links.component';
 
-export default class App extends React.Component {
+// import { hot } from 'react-hot-loader';
+import { MeSection } from './me-section/me-section.component';
+
+class App extends React.Component {
 
   public render(): React.ReactNode {
     return (
       <div className="App">
-        {/* <DanceSection/> */}
-        <MeLinks/>
+        <div className="content">
+          {/* <DanceSection/> */}
+          <div className="mt-6">
+            <MeSection />
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-
+export default App;
