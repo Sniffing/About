@@ -1,7 +1,7 @@
 import React from 'react';
 import { FacebookFilled, GithubFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
 
-import styles from './me-links.module.less';
+import './me-links.less';
 import { Button, Col, Row } from 'antd';
 import { observer } from 'mobx-react';
 import { computed } from 'mobx';
@@ -34,19 +34,19 @@ export class MeLinks extends React.Component<IProps> {
     const iconMap: Record<SocialLink, SocialLinkDetail> = {
       [SocialLink.INSTAGRAM]: {
         url: 'https://www.instagram.com/tserence/?hl=en',
-        component: <InstagramFilled className={styles.icon}/>
+        component: <InstagramFilled className={'icon'}/>
       },
       [SocialLink.FACEBOOK]: {
         url: 'http://www.facebook.com',
-        component: <FacebookFilled className={styles.icon}/>
+        component: <FacebookFilled className={'icon'}/>
       },
       [SocialLink.GITHUB]: {
         url: 'https://github.com/sniffing',
-        component: <GithubFilled className={styles.icon}/>
+        component: <GithubFilled className={'icon'}/>
       },
       [SocialLink.LINKEDIN]: {
         url: 'https://www.linkedin.com/in/tserence/',
-        component: <LinkedinFilled className={styles.icon}/>
+        component: <LinkedinFilled className={'icon'}/>
       },
     };
 
@@ -66,7 +66,7 @@ export class MeLinks extends React.Component<IProps> {
 
   public render(): React.ReactNode {
     return (
-      <Row className={styles.container} gutter={16}>
+      <Row className={'container'} gutter={16}>
         {this.icons}
       </Row>
     );

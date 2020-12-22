@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.less';
 import { DanceSection } from './dance-section/dance-section.component';
 import { MeLinks } from './me-section/me-links/me-links.component';
 
