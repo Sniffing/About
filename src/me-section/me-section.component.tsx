@@ -19,7 +19,9 @@ export class MeSection extends React.Component {
           bordered={false}
           cover={<Avatar size={128} src={me}/>}
         >
-          <Meta title={title} description={<p className="description">{description}</p>}/>
+          <Meta
+            title={title}
+            description={<p className="description mb-4">{description}</p>}/>
           <MeLinks />
         </Card>
       </div>
