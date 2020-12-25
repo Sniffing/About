@@ -14,7 +14,7 @@ export class MeSection extends React.Component {
   public render(): JSX.Element {
     const {title, description} = data;
     return (
-      <div className="me">
+      <div className="me mt-4">
         <Card
           bordered={false}
           cover={<Avatar size={128} src={me}/>}

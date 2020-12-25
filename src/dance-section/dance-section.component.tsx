@@ -1,3 +1,4 @@
+import { Carousel } from 'antd';
 import React from 'react';
 import { DanceVideo } from './dance-video/dance-video.component';
 
@@ -10,11 +11,11 @@ export class DanceSection extends React.Component {
       'https://youtu.be/3J4Mokcrc0s'
     ];
     return (
-      <div>
+      <Carousel>
         {urlList.map((url, index) => (
           <DanceVideo key={index} videoUrl={url}/>
         ))}
-      </div>
+      </Carousel>
     );
   }
 }

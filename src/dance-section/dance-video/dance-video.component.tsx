@@ -13,8 +13,9 @@ export class DanceVideo extends React.Component<IProps> {
       <ReactPlayer
         url={videoUrl}
         controls={true}
+        light={true}
         volume={0.2}
-        width="400px"
+        width="100%"
         height="400px"
       />
     );

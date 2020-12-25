@@ -2,19 +2,24 @@ import React from 'react';
 import './App.less';
 import { DanceSection } from './dance-section/dance-section.component';
 
-// import { hot } from 'react-hot-loader';
 import { MeSection } from './me-section/me-section.component';
+import { ESiteTabs } from './section-container/section-container.component';
+import { SectionContainer } from './section-container/section-container.component';
 
 class App extends React.Component {
+
+  public get tabs(): Partial<Record<ESiteTabs, React.ReactNode>> {
+    return {
+      [ESiteTabs.ABOUT]: <MeSection/>,
+      [ESiteTabs.DANCE]: <DanceSection/>,
+    };
+  }
 
   public render(): React.ReactNode {
     return (
       <div className="App">
         <div className="content">
-          {/* <DanceSection/> */}
-          <div className="mt-6">
-            <MeSection />
-          </div>
+          <SectionContainer tabs={this.tabs}/>
         </div>
       </div>
     );
