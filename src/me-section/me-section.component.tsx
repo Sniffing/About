@@ -23,6 +23,9 @@ export class MeSection extends React.Component {
             title={title}
             description={<p className="description mb-4">{description}</p>}/>
           <MeLinks />
+          <div className="py-20">
+            In progress..
+          </div>
         </Card>
       </div>
     );

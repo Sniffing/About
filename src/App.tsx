@@ -11,7 +11,7 @@ class App extends React.Component {
   public get tabs(): Partial<Record<ESiteTabs, React.ReactNode>> {
     return {
       [ESiteTabs.ABOUT]: <MeSection/>,
-      [ESiteTabs.DANCE]: <DanceSection/>,
+      // [ESiteTabs.DANCE]: <DanceSection/>,
     };
   }
 
