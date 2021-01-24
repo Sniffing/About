@@ -1,6 +1,7 @@
 import { Carousel } from 'antd';
 import React from 'react';
 import { DanceVideo } from './dance-video.component';
+import _ from 'lodash';
 
 interface IState {
   urls: string[];
@@ -14,7 +15,6 @@ export class DanceSection extends React.Component<unknown, IState> {
     };
   }
 
-
   public componentDidMount(): void {
     this.getUrlList();
   }
@@ -26,10 +26,11 @@ export class DanceSection extends React.Component<unknown, IState> {
   }
 
   private setUrls = (urls: string[]) => {
-    console.log('setting urls', urls);
-    this.setState({
-      urls,
-    });
+    if (_.xor(urls, this.state.urls).length > 0) {
+      this.setState({
+        urls,
+      });
+    }
   }
 
   public render(): React.ReactNode {

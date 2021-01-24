@@ -1,5 +1,6 @@
 import { Carousel } from 'antd';
 import React from 'react';
+import _ from 'lodash';
 
 interface IState {
   cgiImages: string[];
@@ -24,10 +25,11 @@ export class CGISection extends React.Component<unknown, IState> {
   }
 
   private setCGIImages = (cgiImages: string[]) => {
-    console.log('setting cgi', cgiImages);
-    this.setState({
-      cgiImages,
-    });
+    if (_.xor(cgiImages, this.state.cgiImages).length > 0) {
+      this.setState({
+        cgiImages,
+      });
+    }
   }
 
   public render(): React.ReactNode {
