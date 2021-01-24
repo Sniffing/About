@@ -10,8 +10,14 @@ interface IProps {
 }
 
 export enum ESiteTabs {
-  ABOUT, DANCE,
+  ABOUT, DANCE, CGI
 }
+
+export const ESiteTabsLabels: Record<ESiteTabs, string> = {
+  [ESiteTabs.ABOUT]: 'About',
+  [ESiteTabs.DANCE]: 'Dance',
+  [ESiteTabs.CGI]: 'CGI',
+};
 
 export class SectionContainer extends React.Component<IProps> {
 
@@ -22,7 +28,7 @@ export class SectionContainer extends React.Component<IProps> {
         {Object.entries(tabs).map(([tab, component]) => (
           <TabPane tab={
             <span className="capitalize mx-2">
-              {ESiteTabs[tab].toString().toLowerCase()}
+              {ESiteTabsLabels[tab]}
             </span>} key={tab}>
             {component}
           </TabPane>

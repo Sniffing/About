@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.less';
+import { CGISection } from './cgi-section/cgi-section.component';
 import { DanceSection } from './dance-section/dance-section.component';
 
 import { MeSection } from './me-section/me-section.component';
@@ -11,7 +12,8 @@ class App extends React.Component {
   public get tabs(): Partial<Record<ESiteTabs, React.ReactNode>> {
     return {
       [ESiteTabs.ABOUT]: <MeSection/>,
-      // [ESiteTabs.DANCE]: <DanceSection/>,
+      [ESiteTabs.DANCE]: <DanceSection/>,
+      [ESiteTabs.CGI]: <CGISection/>,
     };
   }
 

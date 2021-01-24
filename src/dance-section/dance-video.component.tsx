@@ -3,7 +3,6 @@ import ReactPlayer from 'react-player/youtube';
 
 interface IProps {
   videoUrl: string;
-
 }
 
 export class DanceVideo extends React.Component<IProps> {
