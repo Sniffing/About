@@ -7,10 +7,13 @@ interface IState {
 }
 
 export class DanceSection extends React.Component<unknown, IState> {
+  public constructor(props) {
+    super(props);
+    this.state = {
+      urls: []
+    };
+  }
 
-  state: {
-    urls: [];
-  };
 
   public componentDidMount(): void {
     this.getUrlList();

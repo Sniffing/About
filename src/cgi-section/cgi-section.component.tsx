@@ -1,13 +1,17 @@
 import { Carousel } from 'antd';
-import { observable, action } from 'mobx';
-import { observer } from 'mobx-react';
 import React from 'react';
 
-@observer
-export class CGISection extends React.Component {
+interface IState {
+  cgiImages: string[];
+}
 
-  @observable
-  private cgiImages: string[] = [];
+export class CGISection extends React.Component<unknown, IState> {
+  public constructor(props) {
+    super(props);
+    this.state = {
+      cgiImages: []
+    };
+  }
 
   public componentDidMount(): void {
     this.getCGIImages();
@@ -19,10 +23,11 @@ export class CGISection extends React.Component {
     this.setCGIImages(data.cgi);
   }
 
-  @action
   private setCGIImages = (cgiImages: string[]) => {
     console.log('setting cgi', cgiImages);
-    this.cgiImages = cgiImages;
+    this.setState({
+      cgiImages,
+    });
   }
 
   public render(): React.ReactNode {
@@ -35,8 +40,8 @@ export class CGISection extends React.Component {
         </p>
 
         <Carousel>
-          {this.cgiImages.map((image,index) => (
-            <div key={index}>image {image}</div>
+          {this.state.cgiImages.map((image,index) => (
+            <img key={index} src={process.env.PUBLIC_URL + image}/>
           ))}
         </Carousel>
       </div>
