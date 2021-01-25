@@ -1,4 +1,4 @@
-import { Carousel } from 'antd';
+import { Carousel, Image } from 'antd';
 import React from 'react';
 import _ from 'lodash';
 
@@ -43,7 +43,7 @@ export class CGISection extends React.Component<unknown, IState> {
 
         <Carousel>
           {this.state.cgiImages.map((image,index) => (
-            <img key={index} src={process.env.PUBLIC_URL + image}/>
+            <Image key={index} width={500} src={process.env.PUBLIC_URL + image}/>
           ))}
         </Carousel>
       </div>
